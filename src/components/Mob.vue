@@ -1,14 +1,13 @@
 <template>
   <li
-    :class="[
-      'vsm-mob-container',
-      'vsm-mob-show',
-      {
-        'vsm-open': active,
-      },
-    ]"
+    :class="['vsm-section', 'vsm-section_mob', {
+      'vsm-open': active
+    }]"
   >
-    <div class="vsm-mob" @click="onClickHamburger">
+    <div
+      class="vsm-mob"
+      @click="onClickHamburger"
+    >
       <slot name="hamburger">
         <div class="vsm-mob__hamburger">
           <div class="vsm-mob-line" />
@@ -19,10 +18,14 @@
     </div>
     <div class="vsm-mob-content">
       <transition name="vsm-mob-anim">
-        <div v-show="active" class="vsm-mob-content__wrap">
-          <slot name="close">
-            <div class="vsm-mob-close" @click="onClickHamburger" />
-          </slot>
+        <div
+          v-show="active"
+          class="vsm-mob-content__wrap"
+        >
+          <div
+            class="vsm-mob-close"
+            @click="onClickHamburger"
+          />
           <slot />
         </div>
       </transition>
@@ -30,71 +33,67 @@
   </li>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import { isOutsideClick, touchEvent } from '../utils/dom';
-
-export default defineComponent({
+<script>
+export default {
   name: 'VsmMob',
   props: {
     value: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
-  emits: ['input', 'update:modelValue'],
-  data() {
+  data () {
     return {
-      active: this.value,
-      event: 'click',
-    };
+      // Support change value without accept props
+      active: this.value
+    }
   },
   watch: {
-    value(val) {
+    // Support for changing a variable externally
+    value (val) {
       if (this.active !== val) {
-        this.active = val;
+        this.active = val
       }
     },
-    active(val) {
+    // Lock the permanent event on click, hang event only when the menu is opened
+    active (val) {
       if (val) {
-        this.registerEvent();
+        this.registerEvent()
       } else {
-        this.unregisterEvent();
+        this.unregisterEvent()
       }
-    },
+    }
   },
-  mounted() {
-    this.reloadEvent();
+  mounted () {
+    const touchSupport = 'ontouchstart' in window || navigator.maxTouchPoints
+    this._touchEvent = touchSupport ? 'touchend' : 'click'
   },
-  beforeUnmount() {
-    this.unregisterEvent();
+  beforeDestroy () {
+    this.unregisterEvent()
   },
   methods: {
-    closeDropdown() {
-      this.emitValue(false);
+    closeDropdown () {
+      this.emitValue(false)
     },
-    onClickHamburger() {
-      this.emitValue(!this.active);
+    onClickHamburger () {
+      this.emitValue(!this.active)
     },
-    reloadEvent() {
-      this.event = touchEvent();
+    registerEvent () {
+      document.body.addEventListener(this._touchEvent, this.eventEndHandler)
     },
-    registerEvent() {
-      document.body.addEventListener(this.event, this.eventEndHandler);
+    unregisterEvent () {
+      document.body.removeEventListener(this._touchEvent, this.eventEndHandler)
     },
-    unregisterEvent() {
-      document.body.removeEventListener(this.event, this.eventEndHandler);
+    emitValue (toggle) {
+      this.active = toggle
+      this.$emit('input', toggle)
     },
-    emitValue(toggle: boolean) {
-      this.active = toggle;
-      this.$emit('input', toggle);
-      this.$emit('update:modelValue', toggle);
-    },
-    eventEndHandler(evt: Event) {
-      if (isOutsideClick(this.$el, evt)) {
-        this.emitValue(false);
+    // Close Dropdown content after outside click
+    eventEndHandler (evt) {
+      if (this.$el !== evt.target && !this.$el.contains(evt.target)) {
+        this.emitValue(false)
       }
-    },
-  },
-});
+    }
+  }
+}
 </script>
