@@ -92,53 +92,20 @@ module.exports =
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5253bf0a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Mob.vue?vue&type=template&id=10049cdc&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{class:['vsm-section', 'vsm-section_mob', {
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1f919ed4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--5!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Mob.vue?vue&type=template&id=10049cdc
+var render = function render(){var _vm=this,_c=_vm._self._c;return _c('li',{class:['vsm-section', 'vsm-section_mob', {
     'vsm-open': _vm.active
-  }]},[_c('div',{staticClass:"vsm-mob",on:{"click":_vm.onClickHamburger}},[_vm._t("hamburger",[_vm._m(0)])],2),_c('div',{staticClass:"vsm-mob-content"},[_c('transition',{attrs:{"name":"vsm-mob-anim"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.active),expression:"active"}],staticClass:"vsm-mob-content__wrap"},[_c('div',{staticClass:"vsm-mob-close",on:{"click":_vm.onClickHamburger}}),_vm._t("default")],2)])],1)])}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vsm-mob__hamburger"},[_c('div',{staticClass:"vsm-mob-line"}),_c('div',{staticClass:"vsm-mob-line"}),_c('div',{staticClass:"vsm-mob-line"})])}]
+  }]},[_c('div',{staticClass:"vsm-mob",on:{"click":_vm.onClickHamburger}},[_vm._t("hamburger",function(){return [_vm._m(0)]})],2),_c('div',{staticClass:"vsm-mob-content"},[_c('transition',{attrs:{"name":"vsm-mob-anim"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.active),expression:"active"}],staticClass:"vsm-mob-content__wrap"},[_c('div',{staticClass:"vsm-mob-close",on:{"click":_vm.onClickHamburger}}),_vm._t("default")],2)])],1)])
+}
+var staticRenderFns = [function (){var _vm=this,_c=_vm._self._c;return _c('div',{staticClass:"vsm-mob__hamburger"},[_c('div',{staticClass:"vsm-mob-line"}),_c('div',{staticClass:"vsm-mob-line"}),_c('div',{staticClass:"vsm-mob-line"})])
+}]
 
 
-// CONCATENATED MODULE: ./src/components/Mob.vue?vue&type=template&id=10049cdc&
+// CONCATENATED MODULE: ./src/components/Mob.vue?vue&type=template&id=10049cdc
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Mob.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Mob.vue?vue&type=script&lang=js
 
-/* harmony default export */ var Mobvue_type_script_lang_js_ = ({
+/* harmony default export */ var Mobvue_type_script_lang_js = ({
   name: 'VsmMob',
   props: {
     value: {
@@ -201,8 +168,8 @@ var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _
   }
 });
 
-// CONCATENATED MODULE: ./src/components/Mob.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_Mobvue_type_script_lang_js_ = (Mobvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/Mob.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_Mobvue_type_script_lang_js = (Mobvue_type_script_lang_js); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
 
@@ -215,7 +182,7 @@ var componentNormalizer = __webpack_require__("2877");
 /* normalize component */
 
 var component = Object(componentNormalizer["a" /* default */])(
-  components_Mobvue_type_script_lang_js_,
+  components_Mobvue_type_script_lang_js,
   render,
   staticRenderFns,
   false,
@@ -240,20 +207,19 @@ var component = Object(componentNormalizer["a" /* default */])(
 // This module is a runtime utility for cleaner component module output and will
 // be included in the final webpack user bundle.
 
-function normalizeComponent (
+function normalizeComponent(
   scriptExports,
   render,
   staticRenderFns,
   functionalTemplate,
   injectStyles,
   scopeId,
-  moduleIdentifier, /* server only */
+  moduleIdentifier /* server only */,
   shadowMode /* vue-cli only */
 ) {
   // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
+  var options =
+    typeof scriptExports === 'function' ? scriptExports.options : scriptExports
 
   // render functions
   if (render) {
@@ -273,7 +239,8 @@ function normalizeComponent (
   }
 
   var hook
-  if (moduleIdentifier) { // server build
+  if (moduleIdentifier) {
+    // server build
     hook = function (context) {
       // 2.3 injection
       context =
@@ -299,11 +266,11 @@ function normalizeComponent (
   } else if (injectStyles) {
     hook = shadowMode
       ? function () {
-        injectStyles.call(
-          this,
-          (options.functional ? this.parent : this).$root.$options.shadowRoot
-        )
-      }
+          injectStyles.call(
+            this,
+            (options.functional ? this.parent : this).$root.$options.shadowRoot
+          )
+        }
       : injectStyles
   }
 
@@ -314,16 +281,14 @@ function normalizeComponent (
       options._injectStyles = hook
       // register for functional component in vue file
       var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
+      options.render = function renderWithStyleInjection(h, context) {
         hook.call(context)
         return originalRender(h, context)
       }
     } else {
       // inject component registration as beforeCreate hook
       var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
+      options.beforeCreate = existing ? [].concat(existing, hook) : [hook]
     }
   }
 
@@ -562,100 +527,25 @@ var main = __webpack_require__("56d7");
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5253bf0a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Menu.vue?vue&type=template&id=2e3340b5&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.element,{tag:"component",staticClass:"vsm-menu vsm-no-transition"},[_c('nav',[_c('ul',{ref:"root",staticClass:"vsm-root"},[_vm._t("before-nav"),_c('li',{staticClass:"vsm-section vsm-section_menu vsm-mob-hide"},_vm._l((_vm.menu),function(item,index){return _c(item.element || (item.dropdown ? 'button' : 'a'),_vm._g(_vm._b({key:index,ref:"links",refInFor:true,tag:"component",class:['vsm-link', item.attributes ? item.attributes.class : null, {
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1f919ed4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--5!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Menu.vue?vue&type=template&id=2e3340b5
+var render = function render(){var _vm=this,_c=_vm._self._c;return _c(_vm.element,{tag:"component",staticClass:"vsm-menu vsm-no-transition"},[_c('nav',[_c('ul',{ref:"root",staticClass:"vsm-root"},[_vm._t("before-nav"),_c('li',{staticClass:"vsm-section vsm-section_menu vsm-mob-hide"},_vm._l((_vm.menu),function(item,index){return _c(item.element || (item.dropdown ? 'button' : 'a'),_vm._g(_vm._b({key:index,ref:"links",refInFor:true,tag:"component",class:['vsm-link', item.attributes ? item.attributes.class : null, {
             'vsm-has-dropdown': item.dropdown
-          }],attrs:{"data-dropdown":item.dropdown,"aria-haspopup":item.dropdown && 'true',"aria-expanded":item.dropdown && 'false'}},'component',item.attributes,false),item.listeners),[_vm._t("title",[_c('span',[_vm._v(_vm._s(item.title))])],{"item":item,"index":index})],2)}),1),_vm._t("after-nav")],2)]),_c('div',{staticClass:"vsm-dropdown vsm-mob-hide"},[_c('div',{ref:"background",staticClass:"vsm-background"},[_c('div',{ref:"backgroundAlt",staticClass:"vsm-background-alt"})]),_c('div',{ref:"arrow",staticClass:"vsm-arrow"}),_c('div',{ref:"dropdownContainer",staticClass:"vsm-dropdown-container"},_vm._l((_vm.menuHasDropdown),function(item,index){return _c('div',{key:index,ref:"sections",refInFor:true,staticClass:"vsm-dropdown-section",attrs:{"data-dropdown":item.dropdown,"aria-hidden":"false"}},[_c('div',{staticClass:"vsm-dropdown-content"},[_vm._t("default",null,{"item":item,"index":index})],2)])}),0)])])}
+          }],attrs:{"data-dropdown":item.dropdown,"aria-haspopup":item.dropdown && 'true',"aria-expanded":item.dropdown && 'false'}},'component',item.attributes,false),item.listeners),[_vm._t("title",function(){return [_c('span',[_vm._v(_vm._s(item.title))])]},{"item":item,"index":index})],2)}),1),_vm._t("after-nav")],2)]),_c('div',{staticClass:"vsm-dropdown vsm-mob-hide"},[_c('div',{ref:"background",staticClass:"vsm-background"},[_c('div',{ref:"backgroundAlt",staticClass:"vsm-background-alt"})]),_c('div',{ref:"arrow",staticClass:"vsm-arrow"}),_c('div',{ref:"dropdownContainer",staticClass:"vsm-dropdown-container"},_vm._l((_vm.menuHasDropdown),function(item,index){return _c('div',{key:index,ref:"sections",refInFor:true,staticClass:"vsm-dropdown-section",attrs:{"data-dropdown":item.dropdown,"aria-hidden":"false"}},[_c('div',{staticClass:"vsm-dropdown-content"},[_vm._t("default",null,{"item":item,"index":index})],2)])}),0)])])
+}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Menu.vue?vue&type=template&id=2e3340b5&
+// CONCATENATED MODULE: ./src/components/Menu.vue?vue&type=template&id=2e3340b5
 
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Menu.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Menu.vue?vue&type=script&lang=js
 
 
 
-/* harmony default export */ var Menuvue_type_script_lang_js_ = ({
+/* harmony default export */ var Menuvue_type_script_lang_js = ({
   name: 'VsmMenu',
   props: {
     /**
@@ -1061,8 +951,8 @@ var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpac
   }
 });
 
-// CONCATENATED MODULE: ./src/components/Menu.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_Menuvue_type_script_lang_js_ = (Menuvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/Menu.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_Menuvue_type_script_lang_js = (Menuvue_type_script_lang_js); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
 
@@ -1075,7 +965,7 @@ var componentNormalizer = __webpack_require__("2877");
 /* normalize component */
 
 var component = Object(componentNormalizer["a" /* default */])(
-  components_Menuvue_type_script_lang_js_,
+  components_Menuvue_type_script_lang_js,
   render,
   staticRenderFns,
   false,
